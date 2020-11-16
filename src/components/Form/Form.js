@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 export const Form = ({ onSubmit }) => {
   const [todoValue, setTodoValue] = useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     const newTodo = {
       id: +new Date(),
       title: todoValue,
